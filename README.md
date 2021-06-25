@@ -85,7 +85,7 @@ To push your commits to the remote repository use, you guessed it:
 ```
 $ git push
 ```
-Your git identity will need to have write access rights to the remote repository to write to it, so make sure you set up your git identity correctly.
+Your git identity will need to have write access rights to the remote repository to write to it, so make sure you set up your git identity correctly (see [How to set up git on your machine](https://kbroman.org/github_tutorial/pages/first_time.html)).
 When your commits are pushed, the remote repository is updated and other contributers can pull the new version.
 
 #### Branching
