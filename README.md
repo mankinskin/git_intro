@@ -95,33 +95,33 @@ to be able to work on different versions of the same project in parallel. This i
 ```
         * - * <- feature branch
       / C   E
-* - * - * - * <- master branch
+* - * - * - * <- main branch
 A   B   D   F
 ```
-`A`, `B`, `C`, etc are commits. `master` and `feature` are branches.
+`A`, `B`, `C`, etc are commits. `main` and `feature` are branches.
 As you can see, both branches share some commits (`A` and `B`) but *diverge* at some point and contain different commits.
 When working in git, you are always "on" a branch. You can switch branches using `git checkout branch_name`.
 Git will then change the contents of your local repository's directory to match the branches' version of the repository.
 
 Branches can later be merged back together by using `git merge`, but this usually creates an ugly "merge commit",
 where any conflicts between the two branches are fixed. It is better to rebase one of the branches first, and then merge by "fast-forwarding":
-- First we change to the branch we want to merge into `master`, in this example it is called `feature`
+- First we change to the branch we want to merge into `main`, in this example it is called `feature`
 ```
 $ git checkout feature
 ```
-- Then we rebase `feature` onto `master`
+- Then we rebase `feature` onto `main`
 ```
-$ git rebase master
+$ git rebase main
 ```
-- We fix any conflicts as our `feature` commits are applied to the end of `master`. The fixes will be part of the commits that made the breaking changes.
-- Now our `feature` branch looks just like `master` with some extra commits at the end:
+- We fix any conflicts as our `feature` commits are applied to the end of `main`. The fixes will be part of the commits that made the breaking changes.
+- Now our `feature` branch looks just like `main` with some extra commits at the end:
 ```
                * - * <- feature branch
              / C   E
-* - * - * - * <- master branch
+* - * - * - * <- main branch
 A   B   D   F
 ```
-- We change back to `master`: `git checkout master`
+- We change back to `main`: `git checkout main`
 - and we merge `feature` without a merge commit:
 ```
 git merge feature --ff-only
@@ -132,7 +132,7 @@ This can be set to default using `git config --global merge.ff only`)
 ```
                * - * <- feature branch
              / C   E
-* - * - * - * - * - * <- master branch
+* - * - * - * - * - * <- main branch
 A   B   D   F   C   E
 ```
 - The feature branch can now be deleted
