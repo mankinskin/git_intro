@@ -100,10 +100,10 @@ A   B   D   F
 ```
 `A`, `B`, `C`, etc are commits. `main` and `feature` are branches.
 As you can see, both branches share some commits (`A` and `B`) but *diverge* at some point and contain different commits.
-When working in git, you are always "on" a branch. You can switch branches using `git checkout branch_name`.
+When working in git, you are usually "on" a branch. You can switch branches using `git checkout branch_name`.
 Git will then change the contents of your local repository's directory to match the branches' version of the repository.
 
-Branches can later be merged back together by using `git merge`, but this usually creates an ugly "merge commit",
+Branches can later be merged back together by using `git merge`, but this creates an ugly "merge commit",
 where any conflicts between the two branches are fixed. It is better to rebase one of the branches first, and then merge by "fast-forwarding":
 - First we change to the branch we want to merge into `main`, in this example it is called `feature`
 ```
@@ -128,7 +128,7 @@ git merge feature --ff-only
 ```
 (`--ff-only` means fast-forward only. If for some reason fast-forward is not possible we will get an error message.
 This can be set to default using `git config --global merge.ff only`)
-- Now `master` contains the extra commits from `feature`:
+- Now `main` contains the extra commits from `feature`:
 ```
                * - * <- feature branch
              / C   E
