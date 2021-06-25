@@ -98,7 +98,7 @@ A - B - D - F <- main branch
         C - E <- feature branch
 ```
 `A`, `B`, `C`, etc are commits. `main` and `feature` are branches.
-As you can see, both branches share some commits (`A` and `B`) but *diverge* at some point and contain different commits.
+As you can see, both branches share some commits (`A` and `B`) but *diverge* at some point (after `B`) and contain different commits.
 When working in git, you are usually "on" a branch. You can switch branches using `git checkout branch_name`.
 Git will then change the contents of your local repository's directory to match the branches' version of the repository.
 
