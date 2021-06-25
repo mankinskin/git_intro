@@ -93,11 +93,9 @@ When your commits are pushed, the remote repository is updated and other contrib
 The commit history is a chain of commits managed by git. It is possible to "branch" out a second commit history
 to be able to work on different versions of the same project in parallel. This is can be visualized like this:
 ```
-* - * - * - * <- main branch
-A   B   D   F
+A - B - D - F <- main branch
       \
-        * - * <- feature branch
-        C   E
+        C - E <- feature branch
 ```
 `A`, `B`, `C`, etc are commits. `main` and `feature` are branches.
 As you can see, both branches share some commits (`A` and `B`) but *diverge* at some point and contain different commits.
@@ -117,11 +115,9 @@ $ git rebase main
 - We fix any conflicts as our `feature` commits are applied to the end of `main`. The fixes will be part of the commits that made the breaking changes.
 - Now our `feature` branch looks just like `main` with some extra commits at the end:
 ```
-* - * - * - * <- main branch
-A   B   D   F
+A - B - D - F <- main branch
              \
-               * - * <- feature branch
-               C   E
+               C - E <- feature branch
 ```
 - We change back to `main`: `git checkout main`
 - and we merge `feature` without a merge commit:
@@ -132,11 +128,9 @@ git merge feature --ff-only
 This can be set to default using `git config --global merge.ff only`)
 - Now `main` contains the extra commits from `feature`:
 ```
-* - * - * - * - * - * <- main branch
-A   B   D   F   C   E
+A - B - D - F - C - E <- main branch
              \
-               * - * <- feature branch
-               C   E
+               C - E <- feature branch
 ```
 - The feature branch can now be deleted
 ```
