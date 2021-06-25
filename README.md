@@ -76,7 +76,7 @@ $ git commit -m "Add .gitignore file"
 This is also fine, but it is often useful to review the changes and be able to write a commit message on multiple lines.
 Commit messages should use an imperative language to describe their changes. Reading commits should be like reading a log of commands.
 [How to write good commit messages.](https://chris.beams.io/posts/git-commit/)
-Commits should also be easy to understand and it is best to package changes into many well described commits than into one commit doing multiple things.
+Commits should also be easy to understand and it is best to package changes into many well described commits than into one commit doing multiple things. This makes it easier to understand the commit history and find potential problems.
 
 #### Pushing local commits
 
