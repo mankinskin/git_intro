@@ -63,7 +63,7 @@ $ git add -u -p
 
 #### Creating a new commit
 
-You now have changes in the staging area. Now you can put them in a commit which can be pushed to the remote repository.
+You now have changes in the staging area (verify with `git status`). Now you can put them in a commit which can be pushed to the remote repository.
 You should provide a good description of what the commit *does* to the repository. I would advise you to use this command:
 ```
 $ git commit -v
